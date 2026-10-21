@@ -1,0 +1,109 @@
+
+@import "tailwindcss";
+
+/* =================================
+   KES PROJECTS — GLOBAL DESIGN
+================================= */
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Brand colors */
+  --kes-red: #c90016;
+  --kes-red-hover: #a90012;
+
+  /* Light section colors */
+  --kes-bg: #f7f7f8;
+  --kes-surface: #ffffff;
+  --kes-surface-light: #f0f1f3;
+
+  /* Text colors */
+  --kes-text: #17191f;
+  --kes-text-muted: #626873;
+
+  /* Borders */
+  --kes-border: #e2e4e8;
+
+  /* Dark section colors */
+  --kes-dark-bg: #111318;
+  --kes-dark-surface: #1b1d23;
+  --kes-dark-surface-light: #25272d;
+  --kes-dark-text: #f9fafb;
+  --kes-dark-text-muted: #b8bec8;
+  --kes-dark-border: rgba(255, 255, 255, 0.1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Predictable sizing */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  background: var(--kes-bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--kes-bg);
+  color: var(--kes-text);
+  line-height: 1.6;
+}
+
+/* Form controls inherit site typography */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Keyboard accessibility */
+:focus-visible {
+  outline: 2px solid #f87171;
+  outline-offset: 3px;
+}
+
+/* Selection color */
+::selection {
+  color: #ffffff;
+  background: var(--kes-red);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
