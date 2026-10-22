@@ -1,93 +1,93 @@
-
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight, Handshake, MoveUpRight } from "lucide-react";
+import {useState} from "react";
+import {Link} from "react-router-dom";
+import {ArrowRight, Handshake, MoveUpRight} from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const clients = [
-  { name: "Maruti Suzuki", logo: "/clients/maruti-suzuki.png" },
-  { name: "Coromandel", logo: "/clients/coromandel.png" },
-  { name: "Krishna", logo: "/clients/krishna.png" },
-  { name: "Goldi Solar", logo: "/clients/goldi-solar.png" },
-  { name: "ASAL", logo: "/clients/asal.png" },
-  { name: "IndiCold", logo: "/clients/indicold.png" },
-  { name: "V-Trans", logo: "/clients/v-trans.png" },
-  { name: "Flair", logo: "/clients/flair.png" },
-  { name: "Troikaa", logo: "/clients/troikaa.png" },
-  { name: "Spark Minda", logo: "/clients/spark-minda.png" },
-  { name: "Godawitt", logo: "/clients/godawitt.png" },
-  { name: "Savita Oil", logo: "/clients/savita-oil.png" },
-  { name: "CR3 India", logo: "/clients/cr3.png" },
-  { name: "SUD Chemie", logo: "/clients/sud-chemie.png" },
-  { name: "Meghali", logo: "/clients/meghali.png" },
-  { name: "Alliance Recept", logo: "/clients/alliance-recept.png" },
-  { name: "Coraplast", logo: "/clients/coraplast.png" },
-  { name: "Archroma", logo: "/clients/archroma.png" },
-  { name: "Yash Highvoltage", logo: "/clients/yash-highvoltage.png" },
-  { name: "Orbis", logo: "/clients/orbis.png" },
-  { name: "Agrawal", logo: "/clients/agrawal.png" },
-  { name: "Paharpur", logo: "/clients/paharpur.png" },
-  { name: "NML", logo: "/clients/nml.png" },
-  { name: "JBM", logo: "/clients/jbm.png" },
-  { name: "Lumax", logo: "/clients/lumax.png" },
-  { name: "Aerolam", logo: "/clients/aerolam.png" },
-  { name: "TCPL", logo: "/clients/tcpl.png" },
-  { name: "Motherson", logo: "/clients/motherson.png" },
-  { name: "Somic ZF", logo: "/clients/somic-zf.png" },
-  { name: "Napino", logo: "/clients/napino.png" },
-  { name: "Omega Ice Hill", logo: "/clients/omega-ice-hill.png" },
-  { name: "NTF Filter", logo: "/clients/ntf-filter.png" },
-  { name: "Prakash", logo: "/clients/prakash.png" },
-  { name: "Mascot Industrial Park", logo: "/clients/mascot.png" },
-  { name: "Bholikota University", logo: "/clients/bholikota-university.png" },
-  { name: "Rainbow Group of Industries", logo: "/clients/rainbow.png" },
-  { name: "PCL Logistics", logo: "/clients/pcl-logistics.png" },
-  { name: "Surja Extrusion", logo: "/clients/surja-extrusion.png" },
-  { name: "Alaina Healthcare", logo: "/clients/alaina-healthcare.png" },
-  { name: "Polymetrix Solutions", logo: "/clients/polymetrix.png" },
-  { name: "Aristo Plast", logo: "/clients/aristo-plast.png" },
-  { name: "Krishna Maruti", logo: "/clients/krishna-maruti.png" },
-  { name: "Royal Tech", logo: "/clients/royal-tech.png" },
-  { name: "Sparco Multiplast", logo: "/clients/sparco.png" },
-  { name: "Param", logo: "/clients/param.png" },
-  { name: "Consta Cool", logo: "/clients/consta-cool.png" },
-  { name: "total imperial", logo: "/clients/total-imperial.png" },
-  { name: "fnp", logo: "/clients/fnp.png" },
-    { name: "Tandel", logo: "/clients/tandel.png" },
-      { name: "Trans Electro", logo: "/clients/trans-electro.png" },
- { name: "Superkino", logo: "/clients/superkino.png" },
- { name: "mpl", logo: "/clients/mpl.png" },
-  { name: "ASHA", logo: "/clients/asha.png" },
- { name: "SAI", logo: "/clients/sai.png" },
- { name: "DK fire", logo: "/clients/dk-fire.png" },
+  {name: "Maruti Suzuki", logo: "/clients/maruti-suzuki.png"},
+  {name: "Coromandel", logo: "/clients/coromandel.png"},
+  {name: "Krishna", logo: "/clients/krishna.png"},
+  {name: "Goldi Solar", logo: "/clients/goldi-solar.png"},
+  {name: "ASAL", logo: "/clients/asal.png"},
+  {name: "IndiCold", logo: "/clients/indicold.png"},
+  {name: "V-Trans", logo: "/clients/v-trans.png"},
+  {name: "Flair", logo: "/clients/flair.png"},
+  {name: "Troikaa", logo: "/clients/troikaa.png"},
+  {name: "Spark Minda", logo: "/clients/spark-minda.png"},
+  {name: "Godawitt", logo: "/clients/godawitt.png"},
+  {name: "Savita Oil", logo: "/clients/savita-oil.png"},
+  {name: "CR3 India", logo: "/clients/cr3.png"},
+  {name: "SUD Chemie", logo: "/clients/sud-chemie.png"},
+  {name: "Meghali", logo: "/clients/meghali.png"},
+  {name: "Alliance Recept", logo: "/clients/alliance-recept.png"},
+  {name: "Coraplast", logo: "/clients/coraplast.png"},
+  {name: "Archroma", logo: "/clients/archroma.png"},
+  {name: "Yash Highvoltage", logo: "/clients/yash-highvoltage.png"},
+  {name: "Orbis", logo: "/clients/orbis.png"},
+  {name: "Agrawal", logo: "/clients/agrawal.png"},
+  {name: "Paharpur", logo: "/clients/paharpur.png"},
+  {name: "NML", logo: "/clients/nml.png"},
+  {name: "JBM", logo: "/clients/jbm.png"},
+  {name: "Lumax", logo: "/clients/lumax.png"},
+  {name: "Aerolam", logo: "/clients/aerolam.png"},
+  {name: "TCPL", logo: "/clients/tcpl.png"},
+  {name: "Motherson", logo: "/clients/motherson.png"},
+  {name: "Somic ZF", logo: "/clients/somic-zf.png"},
+  {name: "Napino", logo: "/clients/napino.png"},
+  {name: "Omega Ice Hill", logo: "/clients/omega-ice-hill.png"},
+  {name: "NTF Filter", logo: "/clients/ntf-filter.png"},
+  {name: "Prakash", logo: "/clients/prakash.png"},
+  {name: "Mascot Industrial Park", logo: "/clients/mascot.png"},
+  {name: "Bholikota University", logo: "/clients/bholikota-university.png"},
+  {name: "Rainbow Group of Industries", logo: "/clients/rainbow.png"},
+  {name: "PCL Logistics", logo: "/clients/pcl-logistics.png"},
+  {name: "Surja Extrusion", logo: "/clients/surja-extrusion.png"},
+  {name: "Alaina Healthcare", logo: "/clients/alaina-healthcare.png"},
+  {name: "Polymetrix Solutions", logo: "/clients/polymetrix.png"},
+  {name: "Aristo Plast", logo: "/clients/aristo-plast.png"},
+  {name: "Krishna Maruti", logo: "/clients/krishna-maruti.png"},
+  {name: "Royal Tech", logo: "/clients/royal-tech.png"},
+  {name: "Sparco Multiplast", logo: "/clients/sparco.png"},
+  {name: "Param", logo: "/clients/param.png"},
+  {name: "Consta Cool", logo: "/clients/consta-cool.png"},
+  {name: "total imperial", logo: "/clients/total-imperial.png"},
+  {name: "fnp", logo: "/clients/fnp.png"},
+  {name: "Tandel", logo: "/clients/tandel.png"},
+  {name: "Trans Electro", logo: "/clients/trans-electro.png"},
+  {name: "Superkino", logo: "/clients/superkino.png"},
+  {name: "mpl", logo: "/clients/mpl.png"},
+  {name: "ASHA", logo: "/clients/asha.png"},
+  {name: "SAI", logo: "/clients/sai.png"},
+  {name: "DK fire", logo: "/clients/dk-fire.png"},
 
- { name: "CMR", logo: "/clients/cmr.png" },
+  {name: "CMR", logo: "/clients/cmr.png"},
 
- { name: "Houseware", logo: "/clients/houseware.png" },
+  {name: "Houseware", logo: "/clients/houseware.png"},
 
- { name: "Prince", logo: "/clients/prince.png" },
- { name: "Airtech", logo: "/clients/airtech.png" },
- { name: "aarmonia", logo: "/clients/aarmonia.png" },
- { name: "Fairdeal", logo: "/clients/fairdeal.png" },
- { name: "sanden", logo: "/clients/sanden.png" },
- { name: "Horizon", logo: "/clients/horizon.png" },
- { name: "Polymetrix", logo: "/clients/polymetrix.png" },
- { name: "Money-packers", logo: "/clients/money-packers.png" },
- { name: "avail infra", logo: "/clients/avail-infra.png" },
- { name: "Akshar", logo: "/clients/akshar.png" },
- 
- { name: "Akshar Electric Panel Boards Pvt. Ltd.", logo: "/clients/akshar-electric.png" },
- { name: "CMP", logo: "/clients/cmp.png" },
- { name: "Krishna Maruti", logo: "/clients/krishna-maruti.png" },
- { name: "Nil metal", logo: "/clients/nil-metal.png" },
- { name: "SS Printt O Pack Pvt Ltd", logo: "/clients/ss-print.png" },
+  {name: "Prince", logo: "/clients/prince.png"},
+  {name: "Airtech", logo: "/clients/airtech.png"},
+  {name: "aarmonia", logo: "/clients/aarmonia.png"},
+  {name: "Fairdeal", logo: "/clients/fairdeal.png"},
+  {name: "sanden", logo: "/clients/sanden.png"},
+  {name: "Horizon", logo: "/clients/horizon.png"},
+  {name: "Polymetrix", logo: "/clients/polymetrix.png"},
+  {name: "Money-packers", logo: "/clients/money-packers.png"},
+  {name: "avail infra", logo: "/clients/avail-infra.png"},
+  {name: "Akshar", logo: "/clients/akshar.png"},
 
-
+  {
+    name: "Akshar Electric Panel Boards Pvt. Ltd.",
+    logo: "/clients/akshar-electric.png",
+  },
+  {name: "CMP", logo: "/clients/cmp.png"},
+  {name: "Krishna Maruti", logo: "/clients/krishna-maruti.png"},
+  {name: "Nil metal", logo: "/clients/nil-metal.png"},
+  {name: "SS Printt O Pack Pvt Ltd", logo: "/clients/ss-print.png"},
 ];
 
-function ClientCard({ client }) {
+function ClientCard({client}) {
   const [logoFailed, setLogoFailed] = useState(false);
 
   return (
@@ -124,8 +124,14 @@ export default function ClientsPage() {
 
       <main className="bg-[#111318] text-white">
         {/* Hero */}
-        <section className="relative overflow-hidden border-b border-white/10 px-5 py-16 sm:py-20 lg:py-24">
-          <div className="absolute -right-32 -top-24 h-80 w-80 rounded-full bg-red-700/10 blur-3xl" />
+       <section className="relative isolate overflow-hidden border-b border-white/10 px-5 py-16 sm:py-20 lg:py-24">
+          <img
+            src="/images/clients-hero.jpg"
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 -z-20 h-full w-full scale-105 object-cover blur-[2px]"
+          />
+         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111318]/90 via-[#111318]/75 to-[#111318]/45" />
 
           <div className="relative mx-auto max-w-7xl">
             <div className="mb-5 flex items-center gap-3">
@@ -137,9 +143,7 @@ export default function ClientsPage() {
 
             <h1 className="max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Trusted relationships.
-              <span className="block text-red-500">
-                Lasting impact.
-              </span>
+              <span className="block text-red-500">Lasting impact.</span>
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-gray-400 sm:text-lg">

@@ -27,13 +27,15 @@ export default function Footer() {
   return (
     <footer className="bg-[#111318] text-gray-300">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:py-16 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company information */}
           <div>
             <Link to="/" className="inline-flex items-center gap-3">
-              <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-700 text-xl font-black text-white shadow-lg shadow-red-950/30">
-              </span>
-
+              <img
+  src="kes-logo.png"
+  alt="KES Projects Logo"
+  className="h-12 w-16 shrink-0 object-contain "
+/>
               <span>
                 <span className="block text-xl font-extrabold text-white">
                   KES Projects

@@ -136,23 +136,37 @@ export default function ProjectsPage() {
       <Navbar />
 
       <main>
-        {/* Hero */}
-        <section className="bg-gray-950 px-5 py-20 text-white sm:py-28">
-          <div className="mx-auto max-w-7xl">
-            <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
-              Our Work
-            </p>
+        
 
-            <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
-              Projects That Build Trust
-            </h1>
+{/* Hero */}
+<section className="relative isolate overflow-hidden border-b border-white/10 bg-[#111318] px-5 py-20 text-white sm:py-24 lg:py-28">
 
-            <p className="mt-6 max-w-2xl leading-8 text-gray-300 sm:text-lg">
-              Explore industrial projects across manufacturing, automotive,
-              chemical, warehousing, and other sectors.
-            </p>
-          </div>
-        </section>
+  {/* Background image */}
+  <img
+    src="/images/projects-hero.jpg"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 h-full w-full scale-105 object-cover object-center blur-[2px]"
+  />
+
+  {/* Dark overlay */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111318]/90 via-[#111318]/75 to-[#111318]/45" />
+
+  <div className="relative mx-auto max-w-7xl">
+    <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
+      Our Work
+    </p>
+
+    <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl lg:text-6xl">
+      Projects That Build Trust
+    </h1>
+
+    <p className="mt-6 max-w-2xl leading-8 text-gray-200 sm:text-lg">
+      Explore industrial projects across manufacturing, automotive,
+      chemical, warehousing, and other sectors.
+    </p>
+  </div>
+</section>
 
         {/* Project gallery */}
         <section className="px-5 py-16 sm:py-20">

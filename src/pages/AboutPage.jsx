@@ -53,133 +53,64 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="min-h-screen bg-[#111318] text-white">
-        {/* Page hero */}
-        <section className="relative overflow-hidden border-b border-white/10 bg-[#111318] px-5 py-20 sm:py-28">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-20 h-80 w-80 rounded-full bg-red-700/10 blur-3xl"
-          />
 
-          <div className="relative mx-auto max-w-7xl">
-            <div className="flex items-center gap-3">
-              <span className="h-[2px] w-10 bg-red-600" />
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
-                Who We Are
-              </p>
-            </div>
+{/* Page hero */}
+<section className="relative isolate overflow-hidden border-b border-white/10 bg-[#111318]">
+  {/* Background image */}
+  <img
+    src="/images/kes-industrial-hero.jpg"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 h-full w-full object-cover object-center  blur-[2px]"
+  />
 
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-              About KES Group
-              <span className="mt-2 block text-red-500">
-                Engineering with Purpose.
-              </span>
-            </h1>
+  {/* Dark overlay for readable text */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111318] via-[#111318]/90 to-[#111318]/55" />
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-gray-300 sm:text-lg">
-              Your engineering partner for industrial buildings, steel
-              structures, and integrated engineering solutions.
-            </p>
-          </div>
-        </section>
+  {/* Subtle red accent */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-br from-transparent via-transparent to-red-950/30" />
 
-        {/* Company story and statistics */}
-        <section className="px-5 py-16 sm:py-20 lg:py-24">
-          <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <div className="flex items-center gap-3">
-                <span className="h-[2px] w-8 bg-red-600" />
-                <p className="text-xs font-bold uppercase tracking-[0.22em] text-red-400 sm:text-sm">
-                  Our Story
-                </p>
-              </div>
+  <div className="mx-auto flex min-h-[520px] max-w-7xl items-center px-5 py-20 sm:px-8 sm:py-24 lg:min-h-[600px] lg:px-12">
+    <div className="max-w-3xl">
+      <div className="flex items-center gap-3">
+        <span className="h-[2px] w-10 bg-red-600" />
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-red-400 sm:text-sm">
+          Who We Are
+        </p>
+      </div>
 
-              <h2 className="mt-4 text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-                Engineering Excellence,
-                <span className="block text-red-500">Built on Trust</span>
-              </h2>
+      <h1 className="mt-6 text-4xl font-black leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-7xl">
+        About KES Group
+        <span className="mt-3 block text-red-500">
+          Engineering with Purpose.
+        </span>
+      </h1>
 
-              <p className="mt-6 leading-8 text-gray-300">
-                KES Group, headquartered in Gandhinagar, Gujarat, provides
-                engineering solutions for industrial and infrastructure
-                projects. Its work includes pre-engineered buildings,
-                industrial steel structures, wastewater treatment systems,
-                and EPC services.
-              </p>
+      <p className="mt-6 max-w-2xl text-base leading-8 text-gray-200 sm:text-lg">
+        Your engineering partner for industrial buildings, steel structures,
+        and integrated engineering solutions.
+      </p>
 
-              <p className="mt-4 leading-8 text-gray-400">
-                Our focus is on practical design, quality execution, and
-                long-term partnerships with our clients.
-              </p>
+      <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <Link
+          to="/projects"
+          className="inline-flex items-center justify-center gap-2 rounded-md bg-red-700 px-6 py-4 font-bold text-white transition hover:bg-red-600"
+        >
+          Explore Our Projects <ArrowRight size={18} />
+        </Link>
 
-              <Link
-                to="/projects"
-                className="mt-8 inline-flex items-center gap-2 rounded-md bg-red-700 px-6 py-4 font-bold text-white transition hover:bg-red-600"
-              >
-                Explore Our Projects <ArrowRight size={18} />
-              </Link>
-            </div>
+        <Link
+          to="/contact"
+          className="inline-flex items-center justify-center rounded-md border border-white/30 bg-white/5 px-6 py-4 font-bold text-white backdrop-blur-sm transition hover:border-red-500 hover:bg-white/10"
+        >
+          Contact Our Team
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
 
-            {/* Statistics */}
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {stats.map((stat, index) => (
-                <article
-                  key={stat.label}
-                  className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#1B1D23] p-6 transition duration-300 hover:-translate-y-1 hover:border-red-600/50 sm:p-8"
-                >
-                  <div
-                    className={`absolute left-0 top-0 h-1 bg-red-600 transition-all duration-300 ${
-                      index === 0 ? "w-12" : "w-0 group-hover:w-12"
-                    }`}
-                  />
 
-                  <p className="text-4xl font-extrabold tracking-tight text-red-500 sm:text-5xl">
-                    {stat.number}
-                  </p>
-
-                  <p className="mt-3 font-semibold text-gray-200">
-                    {stat.label}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Vision and mission */}
-        <section className="border-y border-white/10 bg-[#181A20] px-5 py-16 sm:py-20">
-          <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2">
-            <article className="rounded-xl border border-white/10 bg-[#202229] p-7 transition duration-300 hover:border-red-600/40 sm:p-10">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-red-600/10">
-                <Eye size={30} className="text-red-400" />
-              </div>
-
-              <h2 className="mt-5 text-2xl font-bold text-white">
-                Our Vision
-              </h2>
-
-              <p className="mt-4 leading-7 text-gray-300">
-                To be a trusted engineering partner recognized for quality,
-                innovation, and dependable industrial solutions.
-              </p>
-            </article>
-
-            <article className="rounded-xl border border-white/10 bg-[#202229] p-7 transition duration-300 hover:border-red-600/40 sm:p-10">
-              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-red-600/10">
-                <Target size={30} className="text-red-400" />
-              </div>
-
-              <h2 className="mt-5 text-2xl font-bold text-white">
-                Our Mission
-              </h2>
-
-              <p className="mt-4 leading-7 text-gray-300">
-                To deliver efficient engineering and construction solutions
-                through skilled teams, thoughtful planning, and a commitment
-                to quality and safety.
-              </p>
-            </article>
-          </div>
-        </section>
 
         {/* Company values */}
         <section className="px-5 py-16 sm:py-20 lg:py-24">

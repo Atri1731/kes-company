@@ -74,41 +74,55 @@ export default function ServicesPage() {
       <Navbar />
 
       <main className="min-h-screen bg-[#111318] text-white">
-        {/* Hero */}
-        <section className="relative overflow-hidden border-b border-white/10 px-5 py-20 sm:py-28">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-red-700/10 blur-3xl"
-          />
 
-          <div className="relative mx-auto max-w-7xl">
-            <div className="flex items-center gap-3">
-              <span className="h-[2px] w-10 bg-red-600" />
-              <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
-                What We Do
-              </p>
-            </div>
+{/* Hero */}
+<section className="relative isolate overflow-hidden border-b border-white/10 bg-[#111318] px-5 py-20 sm:py-24 lg:py-28">
+  {/* Industrial background */}
+  <img
+    src="/images/services-hero.jpg"
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 -z-20 h-full w-full object-cover object-center blur-[2px]"
+  />
 
-            <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
-              Engineering Solutions
-              <span className="block text-red-500">
-                for Industrial Growth
-              </span>
-            </h1>
+  {/* Dark overlay */}
+  <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111318]/95 via-[#111318]/80 to-[#111318]/45" />
 
-            <p className="mt-6 max-w-2xl text-base leading-8 text-gray-300 sm:text-lg">
-              From pre-engineered buildings to integrated EPC solutions,
-              explore services designed around industrial project needs.
-            </p>
+  {/* Red accent */}
+  <div
+    aria-hidden="true"
+    className="pointer-events-none absolute -right-24 -top-24 -z-10 h-80 w-80 rounded-full bg-red-700/20 blur-3xl"
+  />
 
-            <Link
-              to="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-md bg-red-700 px-6 py-4 font-bold text-white transition hover:bg-red-600"
-            >
-              Discuss Your Project <ArrowRight size={18} />
-            </Link>
-          </div>
-        </section>
+  <div className="relative mx-auto max-w-7xl">
+    <div className="flex items-center gap-3">
+      <span className="h-[2px] w-10 bg-red-600" />
+      <p className="text-sm font-bold uppercase tracking-[0.25em] text-red-400">
+        What We Do
+      </p>
+    </div>
+
+    <h1 className="mt-5 max-w-4xl text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-7xl">
+      Engineering Solutions
+      <span className="block text-red-500">
+        for Industrial Growth
+      </span>
+    </h1>
+
+    <p className="mt-6 max-w-2xl text-base leading-8 text-gray-200 sm:text-lg">
+      From pre-engineered buildings to integrated EPC solutions,
+      explore services designed around industrial project needs.
+    </p>
+
+    <Link
+      to="/contact"
+      className="mt-8 inline-flex items-center gap-2 rounded-md bg-red-700 px-6 py-4 font-bold text-white transition hover:bg-red-600"
+    >
+      Discuss Your Project <ArrowRight size={18} />
+    </Link>
+  </div>
+</section>
+
 
         {/* Services list */}
         <section className="bg-[#181A20] px-5 py-16 sm:py-20 lg:py-24">

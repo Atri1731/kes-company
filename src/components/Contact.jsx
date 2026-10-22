@@ -106,7 +106,7 @@ const inputClass =
 
   return (
     <section id="contact" className="bg-white py-16 sm:py-20 lg:py-24">
-      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8 ">
         {/* Heading */}
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-700">
