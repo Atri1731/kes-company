@@ -388,7 +388,7 @@ export default function ClientsPage() {
               <div>
                 <h1 className="max-w-5xl text-5xl font-medium leading-[1.02] tracking-[-0.055em] sm:text-6xl md:text-7xl lg:text-[88px]">
                   Good work builds
-                  <span className="block font-normal italic text-[#873F4B]">
+                  <span className="block font-semibold italic text-[#873F4B]">
                     lasting relationships.
                   </span>
                 </h1>
@@ -520,7 +520,7 @@ export default function ClientsPage() {
 
                 <h2 className="mt-4 text-3xl font-medium leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                   Have a project in mind?
-                  <span className="block font-normal italic text-[#F0E0E3]">
+                  <span className="block font-semibold italic text-[#F0E0E3]">
                     Let's start a conversation.
                   </span>
                 </h2>

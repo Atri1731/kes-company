@@ -155,7 +155,7 @@ export default function ContactPage() {
                   <h1 className="mt-8 text-5xl font-medium leading-[1.05] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
                     Every great
                     <span className="block">project starts</span>
-                    <span className="block font-normal italic text-[#873F4B]">
+                    <span className="block font-semibold italic text-[#873F4B]">
                       with a conversation.
                     </span>
                   </h1>

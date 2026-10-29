@@ -510,6 +510,9 @@ export default function ServicesPage() {
         {/* Closing call to action */}
         <section className="px-5 pb-16 sm:px-8 sm:pb-24 lg:px-12">
           <div className="relative mx-auto max-w-[1440px] overflow-hidden bg-[#F0E0E3] px-6 py-12 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
+          
+{/* <div className="relative mx-auto grid max-w-[1280px] gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1fr_0.8fr] lg:items-end lg:gap-16 lg:px-12 lg:py-24"> */}
+
             <div
               aria-hidden="true"
               className="pointer-events-none absolute -right-16 -top-20 h-64 w-64 rounded-full border border-[#C99AA2]/50 sm:h-80 sm:w-80"

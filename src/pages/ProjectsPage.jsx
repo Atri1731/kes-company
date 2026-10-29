@@ -440,65 +440,84 @@ export default function ProjectsPage() {
           <div className="pointer-events-none absolute -right-24 top-8 h-72 w-72 rounded-full border border-[#873F4B]/10 sm:h-96 sm:w-96" />
           <div className="pointer-events-none absolute -right-12 top-20 h-56 w-56 rounded-full border border-[#873F4B]/10 sm:h-72 sm:w-72" />
 
-          <div className="relative mx-auto grid max-w-7xl items-end gap-10 lg:grid-cols-[1.3fr_0.7fr]">
-            <div>
-              <div className="mb-6 flex items-center gap-3">
-                <span className="h-px w-10 bg-[#873F4B]" />
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#873F4B] sm:text-sm">
-                  Our Project Portfolio
-                </p>
-              </div>
+          
+<div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+  {/* Left: existing heading and description */}
+  <div>
+    <div className="mb-6 flex items-center gap-3">
+      <span className="h-px w-10 bg-[#873F4B]" />
+      <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#873F4B] sm:text-sm">
+        Our Project Portfolio
+      </p>
+    </div>
 
-              <h1 className="max-w-4xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                Built with purpose.
-                <span className="mt-2 block font-normal italic text-[#873F4B]">
-                  Engineered to last.
-                </span>
-              </h1>
+    <h1 className="max-w-4xl text-4xl font-semibold leading-[1.12] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+      Built with purpose.
+      <span className="mt-2 block font-semibold italic text-[#873F4B]">
+        Engineered to last.
+      </span>
+    </h1>
 
-              <p className="mt-7 max-w-2xl text-base leading-8 text-[#78716C] sm:text-lg">
-                Explore our project portfolio across industrial sectors,
-                from manufacturing and warehousing to automotive and
-                chemical facilities.
-              </p>
-            </div>
+    <p className="mt-7 max-w-2xl text-base leading-8 text-[#78716C] sm:text-lg">
+      Explore our project portfolio across industrial sectors, from
+      manufacturing and warehousing to automotive and chemical facilities.
+    </p>
+  </div>
 
-            {/* <div className="relative lg:mb-2 lg:justify-self-end">
-              <div className="rounded-2xl border border-[#873F4B]/10 bg-[#F0E0E3] p-6 sm:p-8">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#873F4B] text-white">
-                    <Building2 size={23} />
-                  </div>
-                  <div>
-                    <p className="text-3xl font-semibold tracking-tight text-[#873F4B]">
-                      {projects.length.toString().padStart(2, "0")}
-                    </p>
-                    <p className="text-sm text-[#78716C]">
-                      Featured projects
-                    </p>
-                  </div>
-                </div>
+  {/* Right: portfolio information panel */}
+  <div className="relative lg:justify-self-end lg:w-full lg:max-w-md">
+    <div className="border border-[#D8CEC7] bg-white/80 p-6 sm:p-8">
+      <div className="flex items-center gap-4">
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center bg-[#F0E0E3] text-[#873F4B]">
+          <Building2 size={24} strokeWidth={1.5} />
+        </div>
 
-                <div className="my-6 h-px bg-[#873F4B]/15" />
+        <div>
+          <p className="text-3xl font-semibold tracking-tight text-[#873F4B]">
+            {projects.length.toString().padStart(2, "0")}
+          </p>
+          <p className="mt-1 text-sm text-[#78716C]">
+            Featured projects in our portfolio
+          </p>
+        </div>
+      </div>
 
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="font-semibold text-[#292524]">
-                      Across industries
-                    </p>
-                    <p className="mt-1 text-sm text-[#78716C]">
-                      Discover work by sector and location.
-                    </p>
-                  </div>
-                  <Layers3
-                    size={28}
-                    strokeWidth={1.4}
-                    className="shrink-0 text-[#873F4B]"
-                  />
-                </div>
-              </div>
-            </div> */}
-          </div>
+      <div className="my-6 h-px bg-[#D8CEC7]" />
+
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h2 className="text-lg font-semibold text-[#292524]">
+            Work across industries
+          </h2>
+          <p className="mt-2 text-sm leading-7 text-[#78716C]">
+            Explore projects by client, location, or industry using the
+            portfolio filters below.
+          </p>
+        </div>
+
+        <Layers3
+          size={26}
+          strokeWidth={1.4}
+          className="mt-1 shrink-0 text-[#873F4B]"
+        />
+      </div>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        {categories.slice(1).map((category) => (
+          <span
+            key={category}
+            className="border border-[#D8CEC7] px-3 py-1.5 text-xs text-[#57534E]"
+          >
+            {category}
+          </span>
+        ))}
+      </div>
+    </div>
+
+    <div className="absolute -bottom-3 -right-3 -z-10 h-20 w-20 border-b-2 border-r-2 border-[#873F4B]/30" />
+  </div>
+</div>
+
         </section>
 
         {/* Portfolio */}
@@ -694,7 +713,7 @@ export default function ProjectsPage() {
 
                 <h2 className="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
                   Let's build something
-                  <span className="block font-normal italic text-[#F0E0E3]">
+                  <span className="block font-semibold italic text-[#F0E0E3]">
                     remarkable together.
                   </span>
                 </h2>
