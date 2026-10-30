@@ -7,10 +7,14 @@ import ServicesPage from "./pages/ServicesPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ClientsPage from "./pages/ClientsPage";
 import ContactPage from "./pages/ContactPage";
+import CustomCursor from "./components/CustomCursor";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+    <ScrollToTop/>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />

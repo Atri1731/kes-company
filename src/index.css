@@ -167,3 +167,11 @@ img {
 #root a {
   font-family: "Inter", Arial, sans-serif !important;
 }
+
+
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  body,
+  body * {
+    cursor: none !important;
+  }
+}
