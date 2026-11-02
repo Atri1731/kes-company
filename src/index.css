@@ -153,14 +153,23 @@ img {
 }
 
 /* Body text */
-#root p,
+/* #root p,
 #root li,
 #root label {
   font-family: "Inter", Arial, sans-serif !important;
   font-size: 1rem !important;
   font-weight: 400 !important;
   line-height: 1.7 !important;
+} */
+
+
+/* Body typography */
+#root p,
+#root li,
+#root label {
+  font-family: "Inter", Arial, sans-serif;
 }
+
 
 /* Buttons */
 #root button,
@@ -173,5 +182,163 @@ img {
   body,
   body * {
     cursor: none !important;
+  }
+}
+
+
+/* =====================================
+   KES GLOBAL BUTTON INTERACTIONS
+===================================== */
+
+button {
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Button hover */
+button:not(:disabled):hover {
+  box-shadow: 0 8px 22px rgba(135, 63, 75, 0.16);
+}
+
+/* Button click */
+button:not(:disabled):active {
+  transform: scale(0.96);
+}
+
+/* Animated button text */
+button .button-text {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+button:not(:disabled):hover .button-text {
+  transform: translateY(-3px);
+}
+
+button:focus-visible {
+  outline: 2px solid #873F4B;
+  outline-offset: 4px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  button,
+  button .button-text {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+
+
+/* =====================================
+   KES MAGNETIC BUTTON TEXT ANIMATION
+===================================== */
+
+.magnetic-button {
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.magnetic-button__content {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.magnetic-button:hover .magnetic-button__content {
+  transform: translateY(-2px);
+}
+
+.magnetic-button:active .magnetic-button__content {
+  transform: translateY(1px);
+}
+
+.magnetic-button:focus-visible {
+  outline: 2px solid #873F4B;
+  outline-offset: 4px;
+}
+
+.magnetic-button:disabled,
+.magnetic-button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .magnetic-button,
+  .magnetic-button__content {
+    transition: none !important;
+  }
+}
+
+
+/* KES Button Text Hover Animation */
+
+.magnetic-button__content {
+  display: inline-flex;
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.3s ease;
+}
+
+.magnetic-button:hover .magnetic-button__content {
+  transform: translateY(-4px);
+  color: #F0E0E3;
+}
+
+/* Click animation */
+.magnetic-button:active .magnetic-button__content {
+  transform: translateY(1px);
+}
+
+
+/* KES Premium Button Text Animation */
+
+.kes-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background-color 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.kes-button .kes-button-text {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.kes-button:hover .kes-button-text {
+  transform: translateY(-3px);
+}
+
+.kes-button:active {
+  transform: scale(0.97);
+}
+
+.kes-button:focus-visible {
+  outline: 2px solid #873F4B;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kes-button,
+  .kes-button .kes-button-text {
+    transition: none !important;
   }
 }

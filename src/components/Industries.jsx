@@ -1,132 +1,5 @@
 
 
-// import {
-//   Factory,
-//   Truck,
-//   Warehouse,
-//   FlaskConical,
-//   CarFront,
-//   Utensils,
-//   Shirt,
-//   Sun,
-// } from "lucide-react";
-
-// const industries = [
-//   { title: "Manufacturing", icon: Factory },
-//   { title: "Logistics", icon: Truck },
-//   { title: "Warehousing", icon: Warehouse },
-//   { title: "Pharmaceutical", icon: FlaskConical },
-//   { title: "Automobile", icon: CarFront },
-//   { title: "Food Processing", icon: Utensils },
-//   { title: "Textile", icon: Shirt },
-//   { title: "Renewable Energy", icon: Sun },
-// ];
-
-// export default function Industries() {
-//   return (
-//     <section
-//       id="industries"
-//       className="bg-[#292524] p-3 sm:p-5 lg:p-8"
-//     >
-//       <div className="mx-auto max-w-[1600px] bg-[#F7F5F1] px-5 py-12 sm:px-8 sm:py-16 lg:px-14 lg:py-20">
-//         {/* Section heading */}
-//         <div className="mb-10 flex flex-col justify-between gap-5 sm:mb-14 md:flex-row md:items-end">
-//           <div>
-//             <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#873F4B]">
-//               KES Group / Our Expertise
-//             </p>
-
-//             <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
-//               Industries
-//               <span className="text-[#873F4B]"> we serve.</span>
-//             </h2>
-//           </div>
-
-//           <p className="max-w-sm text-sm leading-7 text-[#78716C]">
-//             Deep domain expertise across India's most critical
-//             industrial sectors.
-//           </p>
-//         </div>
-
-
-
-// {/* Smaller, lighter industry cards */}
-// <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-//   {industries.map((industry, index) => {
-//     const Icon = industry.icon;
-//     const isBurgundy =
-//   Math.floor(index / 4) % 2 === index % 2;
-
-//     return (
-//       <article
-//         key={industry.title}
-//         className={`group relative flex min-h-[155px] flex-col justify-between overflow-hidden border p-4 transition-all duration-300 hover:-translate-y-1 sm:min-h-[170px] sm:p-5 ${
-//           isBurgundy
-//             ? "border-[#D9B7BC] bg-[#EBD9DC] text-[#5E343B] hover:bg-[#E4CDD1]"
-//             : "border-[#E5DCD7] bg-white text-[#292524] hover:border-[#C99AA2]"
-//         }`}
-//       >
-//         <div className="flex items-center justify-between">
-//           <span
-//             className={`font-mono text-[10px] tracking-widest ${
-//               isBurgundy ? "text-[#873F4B]/75" : "text-[#873F4B]"
-//             }`}
-//           >
-//             {String(index + 1).padStart(2, "0")}
-//           </span>
-
-//           <span
-//             className={`h-1.5 w-1.5 rounded-full ${
-//               isBurgundy ? "bg-[#A86D77]" : "bg-[#C99AA2]"
-//             }`}
-//           />
-//         </div>
-
-//         <div
-//           className={`mt-5 flex h-10 w-10 items-center justify-center ${
-//             isBurgundy
-//               ? "bg-white/60 text-[#873F4B]"
-//               : "bg-[#F7F0EE] text-[#873F4B]"
-//           }`}
-//         >
-//           <Icon size={22} strokeWidth={1.6} />
-//         </div>
-
-//         <h3 className="mt-5 text-base font-semibold leading-snug tracking-tight sm:text-lg">
-//           {industry.title}
-//         </h3>
-
-//         <div
-//           className={`absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-300 group-hover:w-full ${
-//             isBurgundy ? "bg-[#A86D77]" : "bg-[#873F4B]"
-//           }`}
-//         />
-//       </article>
-//     );
-//   })}
-// </div>
-
-
-
-//         {/* Bottom note */}
-//         <div className="mt-10 flex flex-col gap-2 border-t border-[#D8CEC7] pt-5 sm:mt-16 sm:flex-row sm:justify-between">
-//           <p className="text-xs leading-6 text-[#78716C]">
-//             Engineering solutions across diverse industrial sectors.
-//           </p>
-
-//           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#873F4B]">
-//             Precision / Performance / Reliability
-//           </p>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-
-
-
-
 import { useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import {
@@ -152,16 +25,39 @@ const industries = [
   { title: "Renewable Energy", icon: Sun },
 ];
 
-const cardVariants = {
-  hidden: {
-    opacity: 0,
-    y: 30,
+const cardPalettes = [
+  {
+    background: "#F0E0E3",
+    border: "#DFC0C6",
+    number: "#C99DA5",
+    iconBg: "#FFFFFF",
+    iconColor: "#873F4B",
+    title: "#5E343B",
+    accent: "#873F4B",
+    hover: "#EBD3D8",
   },
-  visible: {
-    opacity: 1,
-    y: 0,
+  {
+    background: "#FCFAF8",
+    border: "#E5DCD5",
+    number: "#C5A9A9",
+    iconBg: "#F1EAE5",
+    iconColor: "#873F4B",
+    title: "#292524",
+    accent: "#873F4B",
+    hover: "#F5EEE9",
   },
-};
+  {
+    background: "#E9EDE8",
+    border: "#D5DED2",
+    number: "#A5B8A5",
+    iconBg: "#FFFFFF",
+    iconColor: "#496A50",
+    title: "#293C2E",
+    accent: "#496A50",
+    hover: "#DFE8DD",
+  },
+];
+const ease = [0.22, 1, 0.36, 1];
 
 export default function Industries() {
   const reduceMotion = useReducedMotion();
@@ -170,7 +66,7 @@ export default function Industries() {
   return (
     <section
       id="industries"
-      className="bg-[#292524] p-3 sm:p-5 lg:p-8"
+      className="w-full min-w-0 overflow-hidden bg-[#292524] p-3 sm:p-5 lg:p-8"
     >
       <div className="mx-auto max-w-[1600px] overflow-hidden bg-[#F7F5F1] px-5 py-12 sm:px-8 sm:py-16 lg:px-14 lg:py-20">
 
@@ -181,16 +77,16 @@ export default function Industries() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{
-            duration: 0.8,
-            ease: [0.22, 1, 0.36, 1],
+            duration: reduceMotion ? 0 : 0.8,
+            ease,
           }}
         >
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#873F4B]">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#873F4B] sm:text-xs">
               KES Group / Our Expertise
             </p>
 
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] text-[#292524] sm:text-5xl lg:text-6xl">
               Industries
               <span className="text-[#873F4B]">
                 {" "}we serve.
@@ -198,63 +94,49 @@ export default function Industries() {
             </h2>
           </div>
 
-          <p className="max-w-sm text-sm leading-7 text-[#78716C]">
-            Deep domain expertise across India&apos;s most
+          <p className="max-w-sm text-sm leading-7 text-[#78716C] sm:text-base">
+            Deep domain expertise across India's most
             critical industrial sectors.
           </p>
         </motion.div>
 
         {/* Industry cards */}
-        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((industry, index) => {
             const Icon = industry.icon;
+            const palette = cardPalettes[index % 3];
             const isSelected = selectedIndustry === industry.title;
-            const isBurgundy = index % 2 === 0;
 
             return (
               <motion.article
                 key={industry.title}
-                variants={cardVariants}
-                initial={reduceMotion ? false : "hidden"}
-                whileInView="visible"
+                initial={
+                  reduceMotion ? false : { opacity: 0, y: 30 }
+                }
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-               transition={{
-  opacity: {
-    duration: reduceMotion ? 0 : 1,
-    delay: reduceMotion ? 0 : index * 0.25,
-  },
-  y: {
-    duration: reduceMotion ? 0 : 1,
-    delay: reduceMotion ? 0 : index * 0.25,
-    ease: [0.22, 1, 0.36, 1],
-  },
-}}
+                transition={{
+                  duration: reduceMotion ? 0 : 0.7,
+                  delay: reduceMotion ? 0 : (index % 4) * 0.1,
+                  ease,
+                }}
                 whileHover={
-                  reduceMotion
-                    ? undefined
-                    : {
-                        y: -7,
-                        scale: 1.025,
-                        borderColor: "#873F4B",
-                        transition: {
-                          duration: 0.25,
-                          ease: "easeOut",
-                        },
-                      }
+                  reduceMotion ? undefined : {
+                    y: -7,
+                    transition: { duration: 0.25, ease },
+                  }
                 }
                 whileTap={
                   reduceMotion ? undefined : { scale: 0.985 }
                 }
                 animate={{
-                  borderColor: isSelected
-                    ? "#873F4B"
-                    : isBurgundy
-                      ? "#D9B7BC"
-                      : "#E5DCD7",
+                  borderColor: isSelected ? palette.accent : palette.border,
                 }}
-                onClick={() =>
-                  setSelectedIndustry(isSelected ? null : industry.title)
-                }
+                // onClick={() =>
+                //   setSelectedIndustry(
+                //     isSelected ? null : industry.title
+                //   )
+                // }
                 role="button"
                 tabIndex={0}
                 aria-pressed={isSelected}
@@ -266,57 +148,56 @@ export default function Industries() {
                     );
                   }
                 }}
-                className={`group relative flex min-h-[170px] cursor-pointer flex-col overflow-hidden border p-4 sm:min-h-[185px] sm:p-5 ${
-                  isBurgundy
-                    ? "bg-[#EBD9DC] text-[#5E343B]"
-                    : "bg-white text-[#292524]"
-                }`}
+                className="group relative flex min-h-[230px] cursor-pointer flex-col overflow-hidden border p-5 outline-none transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-[#873F4B] focus-visible:ring-offset-2 sm:min-h-[245px] sm:p-6 lg:min-h-[255px] lg:p-7"
+                style={{
+                  backgroundColor: palette.background,
+                }}
               >
-                {/* Card top row */}
-                <div className="flex w-full items-center justify-between">
-                  <span className="font-mono text-[10px] tracking-widest text-[#873F4B]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+{/* Icon left + number right */}
+<div className="flex w-full items-center justify-between">
 
-                  <motion.span
-                    animate={{
-                      scale: isSelected ? 1.4 : 1,
-                      backgroundColor: isSelected
-                        ? "#873F4B"
-                        : "#C99AA2",
-                    }}
-                    transition={{ duration: 0.25 }}
-                    className="h-1.5 w-1.5 rounded-full"
-                  />
-                </div>
+  {/* Icon */}
+  <motion.div
+    animate={{
+      scale: isSelected ? 1.08 : 1,
+    }}
+    whileHover={
+      reduceMotion
+        ? undefined
+        : {
+            rotate: -8,
+            scale: 1.12,
+          }
+    }
+    transition={{ duration: 0.25 }}
+    className="flex h-12 w-12 items-center justify-center"
+    style={{
+      backgroundColor: palette.iconBg,
+      color: palette.iconColor,
+    }}
+  >
+    <Icon size={23} strokeWidth={1.6} />
+  </motion.div>
 
-                {/* Icon */}
-                <motion.div
-                  animate={{
-                    backgroundColor: isSelected
-                      ? "#873F4B"
-                      : isBurgundy
-                        ? "#FFFFFF99"
-                        : "#F7F0EE",
-                    color: isSelected ? "#FFFFFF" : "#873F4B",
-                    scale: isSelected ? 1.08 : 1,
-                  }}
-                  whileHover={
-                    reduceMotion
-                      ? undefined
-                      : { rotate: -8, scale: 1.12 }
-                  }
-                  transition={{ duration: 0.25 }}
-                  className="mt-6 flex h-11 w-11 items-center justify-center"
-                >
-                  <Icon size={22} strokeWidth={1.6} />
-                </motion.div>
+  {/* Light oversized number */}
+  <span
+    className="font-mono text-3xl font-medium leading-none tracking-[-0.06em] sm:text-4xl"
+    style={{
+      color: palette.number,
+      opacity: 0.85,
+    }}
+  >
+    {String(index + 1).padStart(2, "0")}
+  </span>
 
-                {/* Card title */}
+</div>
+
+                {/* Title */}
                 <motion.h3
                   animate={{ x: isSelected ? 3 : 0 }}
                   transition={{ duration: 0.25 }}
-                  className="mt-5 text-base font-semibold leading-snug tracking-tight sm:text-lg"
+                  className="mt-auto pt-6 text-lg font-semibold leading-snug tracking-tight sm:text-xl"
+                  style={{ color: palette.title }}
                 >
                   {industry.title}
                 </motion.h3>
@@ -326,17 +207,18 @@ export default function Industries() {
                   initial={false}
                   animate={{
                     opacity: isSelected ? 1 : 0,
-                    x: isSelected ? 0 : -6,
+                    y: isSelected ? 0 : 5,
                   }}
                   transition={{ duration: 0.25 }}
-                  className="mt-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider text-[#873F4B] sm:text-xs"
+                  className="mt-3 flex items-center gap-2 text-[10px] font-semibold uppercase tracking-wider sm:text-xs"
+                  style={{ color: palette.accent }}
                   aria-hidden={!isSelected}
                 >
                   Explore industry
                   <ArrowUpRight size={14} />
                 </motion.div>
 
-                {/* Animated bottom accent */}
+                {/* Bottom accent */}
                 <motion.div
                   className="absolute bottom-0 left-0 h-[3px] w-full origin-left"
                   initial={false}
@@ -350,20 +232,16 @@ export default function Industries() {
                     duration: 0.3,
                     ease: "easeOut",
                   }}
-                  style={{
-                    backgroundColor: isBurgundy
-                      ? "#A86D77"
-                      : "#873F4B",
-                  }}
+                  style={{ backgroundColor: palette.accent }}
                 />
 
-                {/* Hover background tint */}
+                {/* Hover overlay */}
                 <div
-                  className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 ${
-                    isBurgundy
-                      ? "bg-white/10"
-                      : "bg-[#873F4B]/[0.025]"
-                  }`}
+                  className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    backgroundColor: palette.hover,
+                    mixBlendMode: "multiply",
+                  }}
                 />
               </motion.article>
             );
@@ -371,7 +249,7 @@ export default function Industries() {
         </div>
 
         {/* Bottom note */}
-        <div className="mt-10 flex flex-col gap-2 border-t border-[#D8CEC7] pt-5 sm:mt-16 sm:flex-row sm:justify-between">
+        <div className="mt-10 flex flex-col gap-2 border-t border-[#D8CEC7] pt-5 sm:mt-16 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-xs leading-6 text-[#78716C]">
             Engineering solutions across diverse industrial sectors.
           </p>

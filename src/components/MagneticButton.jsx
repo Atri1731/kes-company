@@ -1,4 +1,5 @@
 
+
 import { useRef } from "react";
 import {
   motion,
@@ -12,6 +13,8 @@ export default function MagneticButton({
   className = "",
   onClick,
   href,
+  disabled = false,
+  type = "button",
 }) {
   const buttonRef = useRef(null);
   const reduceMotion = useReducedMotion();
@@ -39,8 +42,8 @@ export default function MagneticButton({
     const moveX = event.clientX - (rect.left + rect.width / 2);
     const moveY = event.clientY - (rect.top + rect.height / 2);
 
-    pointerX.set(moveX * 0.18);
-    pointerY.set(moveY * 0.18);
+    pointerX.set(moveX * 0.12);
+    pointerY.set(moveY * 0.12);
   };
 
   const resetPosition = () => {
@@ -55,16 +58,27 @@ export default function MagneticButton({
     onMouseLeave: resetPosition,
     onBlur: resetPosition,
     onClick,
-    className: `inline-flex items-center justify-center gap-3 ${className}`,
+    whileHover: reduceMotion ? undefined : { scale: 1.025 },
+    whileTap: reduceMotion ? undefined : { scale: 0.96 },
+    className: `magnetic-button group relative inline-flex items-center justify-center gap-3 overflow-hidden ${className}`,
   };
+
+  const content = (
+    <motion.span className="magnetic-button__content relative z-10 inline-flex items-center justify-center gap-3">
+      {children}
+    </motion.span>
+  );
 
   if (href) {
     return (
       <motion.a
         {...sharedProps}
         href={href}
+        aria-disabled={disabled || undefined}
+        tabIndex={disabled ? -1 : undefined}
+        onClick={disabled ? (event) => event.preventDefault() : onClick}
       >
-        {children}
+        {content}
       </motion.a>
     );
   }
@@ -72,9 +86,10 @@ export default function MagneticButton({
   return (
     <motion.button
       {...sharedProps}
-      type="button"
+      type={type}
+      disabled={disabled}
     >
-      {children}
+      {content}
     </motion.button>
   );
 }
