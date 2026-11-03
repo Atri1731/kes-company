@@ -34,12 +34,3 @@
   }
 }
 
-
-{
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
-}
