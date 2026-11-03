@@ -597,7 +597,7 @@ function StageDetails({ activeStep, onPrevious, onNext }) {
               </motion.span>
             </button>
           ) : (
-         <a
+        <a
   href="/contact"
   className="kes-button group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#873F4B] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#71323D]"
 >
