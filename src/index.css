@@ -370,3 +370,36 @@ button:disabled {
     transition: none !important;
   }
 }
+
+
+.kes-button-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.kes-button-text span {
+  display: inline-block;
+}
+
+.kes-button:hover .kes-button-text span {
+  animation: kesWave 0.45s ease-in-out both;
+  animation-delay: calc(var(--i) * 35ms);
+}
+
+@keyframes kesWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  35% {
+    transform: translateY(-7px);
+  }
+  70% {
+    transform: translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kes-button-text span {
+    animation: none !important;
+  }
+}
