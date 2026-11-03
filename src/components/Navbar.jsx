@@ -153,7 +153,7 @@ export default function Navbar() {
             <Link
               to="/contact"
               onClick={closeMenu}
-              className="group inline-flex min-h-10 shrink-0 items-center gap-1.5 bg-[#873F4B] px-2.5 py-2.5 text-[10px] font-bold tracking-wide text-white shadow-[0_5px_16px_rgba(135,63,75,0.14)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#71323D] hover:shadow-[0_9px_22px_rgba(135,63,75,0.24)] min-[380px]:gap-2 min-[380px]:px-3 sm:min-h-11 sm:px-5 sm:text-xs"
+             className="hidden sm:inline-flex group min-h-11 shrink-0 items-center gap-2 bg-[#873F4B] px-5 py-2.5 text-xs font-bold tracking-wide text-white shadow-[0_5px_16px_rgba(135,63,75,0.14)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#71323D] hover:shadow-[0_9px_22px_rgba(135,63,75,0.24)]"
             >
               Let's Talk
               <ArrowUpRight size={14} className="sm:h-4 sm:w-4" />

@@ -1,5 +1,3 @@
-
-
 import {useEffect, useRef, useState} from "react";
 import MagneticButton from "./MagneticButton";
 import {motion, useReducedMotion, useInView, animate} from "motion/react";
@@ -268,16 +266,16 @@ export default function Hero() {
             </MagneticButton>
 
             <MagneticButton
-  href="/projects"
-  className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-[#873F4B] bg-white px-5 py-3.5 text-sm font-bold !text-[#873F4B] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-[#71323D] hover:!bg-[#473F4B] hover:!text-white hover:shadow-[0_10px_25px_rgba(135,63,75,0.22)] min-[480px]:w-auto min-[480px]:px-6 sm:min-h-14 sm:px-7 sm:py-4"
->
-  <span>Explore Projects</span>
+              href="/projects"
+              className="group inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-md border border-[#873F4B] bg-white px-5 py-3.5 text-sm font-bold !text-[#873F4B] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-[#71323D] hover:!bg-[#473F4B] hover:!text-white hover:shadow-[0_10px_25px_rgba(135,63,75,0.22)] min-[480px]:w-auto min-[480px]:px-6 sm:min-h-14 sm:px-7 sm:py-4"
+            >
+              <span>Explore Projects</span>
 
-  <ArrowUpRight
-    size={18}
-    className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
-  />
-</MagneticButton>
+              <ArrowUpRight
+                size={18}
+                className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+              />
+            </MagneticButton>
           </motion.div>
 
           {/* Trust message */}
