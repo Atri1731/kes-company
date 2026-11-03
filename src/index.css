@@ -201,9 +201,9 @@ button {
 }
 
 /* Button hover */
-button:not(:disabled):hover {
+/* button:not(:disabled):hover {
   box-shadow: 0 8px 22px rgba(135, 63, 75, 0.16);
-}
+} */
 
 /* Button click */
 button:not(:disabled):active {
@@ -304,8 +304,9 @@ button:disabled {
   transform: translateY(1px);
 }
 
-
-/* KES Premium Button Text Animation */
+/* =====================================
+   KES PREMIUM BUTTON STYLING
+===================================== */
 
 .kes-button {
   position: relative;
@@ -318,15 +319,6 @@ button:disabled {
     box-shadow 0.35s ease;
 }
 
-.kes-button .kes-button-text {
-  display: inline-block;
-  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.kes-button:hover .kes-button-text {
-  transform: translateY(-3px);
-}
-
 .kes-button:active {
   transform: scale(0.97);
 }
@@ -336,9 +328,45 @@ button:disabled {
   outline-offset: 4px;
 }
 
+/* =====================================
+   KES WAVY LETTER ANIMATION
+===================================== */
+
+.kes-button .kes-button-text {
+  display: inline-flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.kes-button-text span {
+  display: inline-block;
+  transform: translateY(0);
+}
+
+.kes-button-text.is-waving span {
+  animation: kesWave 0.45s ease-in-out both;
+  animation-delay: calc(var(--i) * 35ms);
+}
+
+@keyframes kesWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  35% {
+    transform: translateY(-8px);
+  }
+
+  70% {
+    transform: translateY(3px);
+  }
+}
+
+/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
   .kes-button,
-  .kes-button .kes-button-text {
+  .kes-button-text span {
+    animation: none !important;
     transition: none !important;
   }
 }

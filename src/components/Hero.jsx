@@ -408,7 +408,7 @@ export default function Hero() {
             >
               {/* Animated Number */}
               <motion.div
-                className="whitespace-nowrap text-[clamp(2.3rem,3.8vw,4rem)] font-medium leading-none tracking-[-0.06em] text-[#873F4B]"
+                className="whitespace-nowrap text-[clamp(2.3rem,3.8vw,4rem)] font-bold leading-none tracking-[-0.06em] text-[#873F4B]"
                 initial={reduceMotion ? false : {opacity: 0, scale: 0.85}}
                 whileInView={{opacity: 1, scale: 1}}
                 viewport={{once: true}}

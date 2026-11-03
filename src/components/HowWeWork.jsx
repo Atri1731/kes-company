@@ -78,7 +78,7 @@ function ProcessStep({ step, active, onClick }) {
       onClick={onClick}
       aria-pressed={active}
       aria-label={`Show ${step.title} details`}
-      className="group relative z-10 flex w-[144px] shrink-0 flex-col items-center text-center outline-none focus-visible:ring-2 focus-visible:ring-[#873F4B] focus-visible:ring-offset-4 sm:w-[158px]"
+      className="process-step-button relative z-10 flex w-[144px] shrink-0 flex-col items-center text-center bg-transparent shadow-none outline-none focus-visible:rounded-full focus-visible:ring-2 focus-visible:ring-[#873F4B] sm:w-[158px]"
     >
       <motion.span
         animate={{
@@ -87,7 +87,12 @@ function ProcessStep({ step, active, onClick }) {
           borderColor: active ? "#873F4B" : "#C9959E",
           color: active ? "#FFFFFF" : "#873F4B",
         }}
-        whileHover={{ scale: 1.03 }}
+        
+  whileHover={{
+    scale: active ? 1.04 : 1.02,
+    // boxShadow: "0 10px 25px rgba(10, 63, 75, 0.18)",
+  }}
+
         transition={{ duration: 0.25, ease }}
         className="flex h-[136px] w-[136px] flex-col items-center justify-center rounded-full border-[3px] px-3 shadow-sm sm:h-[150px] sm:w-[150px]"
       >
@@ -110,11 +115,44 @@ function ProcessStep({ step, active, onClick }) {
     </button>
   );
 }
+function AnimatedButtonText({ children, animate }) {
+  return (
+    <span className={`kes-button-text ${animate ? "is-waving" : ""}`}>
+      {[...children].map((letter, index) => (
+        <span
+          key={index}
+          style={{ "--i": index }}
+        >
+          {letter === " " ? "\u00A0" : letter}
+        </span>
+      ))}
+    </span>
+  );
+}
 
 function StageDetails({ activeStep, onPrevious, onNext }) {
   const reduceMotion = useReducedMotion();
   const step = steps[activeStep];
   const Icon = step.icon;
+  const [waveAction, setWaveAction] = useState("");
+
+const handlePrevious = () => {
+  if (activeStep === 0 || waveAction) return;
+
+  setWaveAction("previous");
+  setTimeout(() => {
+    onPrevious();
+  }, 450);
+};
+
+const handleNext = () => {
+  if (activeStep === steps.length - 1 || waveAction) return;
+
+  setWaveAction("next");
+  setTimeout(() => {
+    onNext();
+  }, 450);
+};
 
   return (
     <motion.div
@@ -157,24 +195,40 @@ function StageDetails({ activeStep, onPrevious, onNext }) {
       </div>
 
       <div className="flex flex-wrap items-center gap-2 lg:justify-end">
-   <button
+<button
   type="button"
-  onClick={onPrevious}
+ onClick={handlePrevious}
   disabled={activeStep === 0}
   className="kes-button group inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-[#DED6D0] px-5 py-2.5 text-sm font-semibold text-[#57534E] hover:border-[#873F4B] hover:bg-[#873F4B] hover:text-white disabled:cursor-not-allowed disabled:opacity-35"
 >
-  <ArrowLeft size={15} className="transition-transform duration-300 group-hover:-translate-x-1" />
-  <span className="kes-button-text">Previous</span>
+  <ArrowLeft
+    size={15}
+    className="transition-transform duration-300 group-hover:-translate-x-1"
+  />
+  {/* <span className="kes-button-text">Previous</span> */}
+ <AnimatedButtonText
+  animate={waveAction === "previous"}
+>
+  Previous
+</AnimatedButtonText>
 </button>
 
         {activeStep < steps.length - 1 ? (
-       <button
+<button
   type="button"
-  onClick={onNext}
+ onClick={handleNext}
   className="kes-button group inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-[#873F4B] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#71323D] hover:shadow-[0_8px_22px_rgba(135,63,75,0.2)]"
 >
-  <span className="kes-button-text">Next Stage</span>
-  <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
+  {/* <span className="kes-button-text">Next Stage</span> */}
+ <AnimatedButtonText
+  animate={waveAction === "next"}
+>
+  Next Stage
+</AnimatedButtonText>
+  <ArrowRight
+    size={15}
+    className="transition-transform duration-300 group-hover:translate-x-1"
+  />
 </button>
         ) : (
           <a

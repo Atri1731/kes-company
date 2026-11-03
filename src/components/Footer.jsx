@@ -19,11 +19,18 @@ const quickLinks = [
   { label: "Contact Us", path: "/contact" },
 ];
 
+// const services = [
+//   "Pre-Engineered Buildings",
+//   "Industrial Steel Structures",
+//   "STP / WTP Systems",
+//   "EPC Solutions",
+// ];
+
 const services = [
-  "Pre-Engineered Buildings",
-  "Industrial Steel Structures",
-  "STP / WTP Systems",
-  "EPC Solutions",
+  { label: "Pre-Engineered Buildings", id: "service-1" },
+  { label: "Industrial Steel Structures", id: "service-2" },
+  { label: "STP / WTP Systems", id: "service-3" },
+  { label: "EPC Solutions", id: "service-4" },
 ];
 
 const ease = [0.22, 1, 0.36, 1];
@@ -132,7 +139,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Capabilities */}
-          <motion.div {...reveal} className="min-w-0">
+          {/* <motion.div {...reveal} className="min-w-0">
             <h3 className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D9A8AE]">
               Capabilities
             </h3>
@@ -153,7 +160,40 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </motion.div> */}
+
+          {/* Capabilities */}
+<motion.div {...reveal} className="min-w-0">
+  <h3 className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#D9A8AE]">
+    Capabilities
+  </h3>
+
+  <div className="mb-6 mt-4 h-px w-10 bg-[#873F4B]" />
+
+  <ul className="space-y-4">
+    {services.map((service, index) => (
+      <li key={service.id}>
+        <Link
+          to={`/services#${service.id}`}
+          className="group flex items-start gap-3 text-sm leading-6 text-white/55 transition-colors duration-300 hover:text-white"
+        >
+          <span className="mt-0.5 font-mono text-[10px] text-[#A66B75]">
+            0{index + 1}
+          </span>
+
+          <span className="transition-transform duration-300 group-hover:translate-x-1">
+            {service.label}
+          </span>
+
+          <ArrowUpRight
+            size={13}
+            className="ml-auto mt-1 shrink-0 opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100"
+          />
+        </Link>
+      </li>
+    ))}
+  </ul>
+</motion.div>
 
           {/* Contact */}
           <motion.div {...reveal} className="min-w-0">
