@@ -444,22 +444,22 @@ function ProcessStep({
               ? "#F0E0E3"
               : "#FCFAF8",
           borderColor:
-            active || completed ? "#873F4B" : "#D8CEC7",
+            active || completed ? "#7b323e" : "#D8CEC7",
           color: active ? "#FFFFFF" : "#873F4B",
           boxShadow: active
-            ? "0 12px 30px rgba(135,63,75,0.20)"
+            ? "0 12px 30px rgba(63, 135, 63, 0.2)"
             : "0 3px 10px rgba(41,37,36,0.04)",
         }}
         whileHover={
           reduceMotion
             ? {}
-            : { scale: active ? 1.04 : 1.02 }
+            : { scale: active ? 0.98 : 1.00 }
         }
         transition={{ duration: 0.35, ease }}
         className="flex h-[136px] w-[136px] flex-col items-center justify-center rounded-full border-[3px] px-3 sm:h-[150px] sm:w-[150px]"
       >
         <motion.span
-          animate={{ y: active ? -2 : 0 }}
+          animate={{ y: active ? -1 : 0 }}
           transition={{ duration: 0.3, ease }}
           className="font-mono text-[22px] font-bold leading-none sm:text-2xl"
         >
@@ -478,11 +478,11 @@ function ProcessStep({
         transition={{ duration: 0.3 }}
         className="mt-3 text-[9px] font-bold uppercase tracking-[0.18em]"
       >
-        {active
+        {/* {active
           ? "Selected stage"
           : completed
             ? "Completed"
-            : "Select stage"}
+            : "Select stage"} */}
       </motion.span>
     </motion.button>
   );
