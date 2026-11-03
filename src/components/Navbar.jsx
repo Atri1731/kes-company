@@ -69,13 +69,21 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header
+      {/* <motion.header
         className={`sticky top-0 z-50 w-full border-b backdrop-blur-xl transition-all duration-300 ${
           scrolled
             ? "border-[#E7DED9] bg-[#FCFAF8]/95 shadow-[0_8px_30px_rgba(41,37,36,0.07)]"
             : "border-[#EAE5E0] bg-white/95 shadow-[0_2px_16px_rgba(41,37,36,0.025)]"
         }`}
-      >
+      > */}
+
+      <motion.header
+  className={`sticky top-0 z-50 w-full border-b transition-all duration-500 ${
+  scrolled
+    ? "border-[#E4D5CC]/70 bg-[#F3EAE5]/80 backdrop-blur-2xl shadow-[0_8px_30px_rgba(41,37,36,0.06)]"
+    : "border-transparent bg-transparent shadow-none"
+}`}
+>
         <div className="h-[3px] bg-gradient-to-r from-[#873F4B] via-[#C99AA2] to-transparent" />
 
         <div
